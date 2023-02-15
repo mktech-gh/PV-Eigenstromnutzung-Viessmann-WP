@@ -14,7 +14,7 @@ Heizkurve:
 ### Feststellungen
 
 - Der Pufferspeicher macht nur Sinn, wenn eine intelligente Kopplung mit der PV-Anlage besteht. Ohne Kopplung ist der Pufferspeicher (meine pers. Meinung) kontraproduktiv:
-  - Der Pufferspeicher muss am Morgen zuerst aufgewärmt werden bis die gewünschte Puffer-Vorlaufttemperatrur erreicht wird und bis sich die Differenz zwischen Wärmepumpen-Rücklauf (aus dem Pufferspeicher) und dem Wärmepumpen-Vorlauf auf die betriebsdifferenz von 2 bis 4 Grad eingependelt ist. 
+  - Der Pufferspeicher muss am Morgen zuerst aufgewärmt werden bis die gewünschte Puffer-Vorlaufttemperatrur erreicht wird und bis sich die Differenz zwischen Wärmepumpen-Rücklauf (aus dem Pufferspeicher) und dem Wärmepumpen-Vorlauf auf die betriebsdifferenz von 2 bis 4 Grad eingependelt ist.
   - Diese "Verlust"-Energie könnte eventuell am Abend zum Teil mit einer früheren Umstellung auf reduzierten Betrieb, kompensiert werden.
 - Ein intelligente Kopplung ist nur mit einer Viessmann-PV-Anlage möglich.
 - Reduzierter Nachtbetrieb;
@@ -33,10 +33,22 @@ Heizkurve:
 - Viessmann Funktion Pufferspeicher: https://www.viessmann.ch/de/wissen/technik-und-systeme/heizwasser-pufferspeicher.html
 - [pr-speicher-wassererwaermer_vitocell.pdf](https://github.com/mktech-gh/SmartHome-and-IoT/files/10737146/pr-speicher-wassererwaermer_vitocell.pdf)
 
-### Projektziel
+### Vorgehen
 
-1. Optimierungen gemäss Seite 14 der Bedienungsanleitung 
--    [Vitotronic 200Bedienungsanleitung.pdf](https://github.com/mktech-gh/SmartHome-and-IoT/files/10737513/Vitotronic.200Bedienungsanleitung.pdf)
+__1. Optimierungen__ 
+- Inspiration: Seite 14 der Bedienungsanleitung [Vitotronic 200Bedienungsanleitung.pdf](https://github.com/mktech-gh/SmartHome-and-IoT/files/10737513/Vitotronic.200Bedienungsanleitung.pdf)
+  a. 20230215 22:00: 
+  - "Reduzierter Betrieb" auf 16Grad (Default-Wert für Fussbodenheizung) sowie 
+  - unmittelbar nach "Normal-Betrieb" einschalten und vor "Normal-Betrieb" ausschalten. 
+  - "Normal-Betrieb" auf 20Grad (Default-Wert für Fussbodenheizung)
+    - Durch den reduzierten Betrieb bleibt die Umwälzpumpe eingeschaltet und die Pufferenergie wird auf die Fussbodenheizung übertragen.
+    - Durch die Senkung der Temperatur beim "reduzierten Betrieb" sollte keine Einschaltung des Verdichters vor der Umschaltung auf "Normal-Betrieb" erfolgen.
+  - __Ergebnis:__
+
+  b. Umschaltung von "Normal-Betrieb" auf "reduziererten-Betrieb auf 21:00 vorverlegen.
+    - Die Pufferenergie wird benutzt zum Heizen bis ca. Mitternacht
+    - __Ergebnis:__
+
 2. Optimierung der Heizzeiten um die Pufferwärme für reduzierung des Einspeise-Energieverbrauchs zu nutzen
 3. Mit einer eigenen intelligenten Kopplung soll der Nutzen des Pufferspeichers genutzt werden. Analog Smard Grid - Steuerung gemäss Bedienungsanleitung Seite 50 und 101 
 4. eine verfrühte Einschaltung des Verdichters am frühen Morgen ist entgegenzuwirken. Dabei wird in erster Linie der Puffer aufgeheizt.

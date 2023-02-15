@@ -1,4 +1,5 @@
-# PV-Eigenstromnutzung-Viessmann-WP
+# Viessmann Wärmepumpen-Heizung mit Pufferspeicher optimieren für Betrieb mit PV-Anlage
+
 Optimale Eigenstromnutzung durch smarte Parameterisierung der Viessmann-WP
 
 Ein wirtschaftlicher Betrieb einer PV-Anlage setzt eine möglichst hohen Eigenstromnutzung voraus. Grundsätzlich wiederspricht sich "heizen" und "hohes PV-Energieangebot". Trotzdem soll möglichst viel PV-Eigenstrom für die Wärmepumpe eingesetzt werden.

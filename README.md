@@ -10,5 +10,7 @@ Im Kühlbetrieb (Sommer) ist der Energiebedarf linear zum PV-Ertrag und schreit 
 Vorgehen:
 
 1. Optimale Heizungs-Einstellung für einen Betrieb ohne externe Einflussnahme
+[Ist-Analyse und statische Optimierung.md](https://github.com/mktech-gh/PV-Eigenstromnutzung-Viessmann-WP/files/10745195/Ist-Analyse.und.statische.Optimierung.md)
+
 2. Konzept für eine Optimierung des Eigenstromverbrauchs
 3. HW- und SW-Komponenten

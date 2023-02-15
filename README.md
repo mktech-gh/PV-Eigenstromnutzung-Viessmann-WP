@@ -5,6 +5,10 @@ Ein wirtschaftlicher Betrieb einer PV-Anlage setzt eine möglichst hohen Eigenst
 
 Im Kühlbetrieb (Sommer) ist der Energiebedarf linear zum PV-Ertrag und schreit gerade nach PV-Eigenstromnutzung.
 
-## Eigenstromverbrauch optimieren bei Wärmebedarf
+## Bei Wärmebedarf den Eigenstromverbrauch optimieren 
 
-1. optimale Heizungs-Parameterisierung für einen Betrieb ohne externe Steuerung
+Vorgehen:
+
+1. Optimale Heizungs-Einstellung für einen Betrieb ohne externe Einflussnahme
+2. Konzept für eine Optimierung des Eigenstromverbrauchs
+3. HW- und SW-Komponenten

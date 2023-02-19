@@ -10,8 +10,10 @@ Im Kühlbetrieb (Sommer) ist der Energiebedarf propotional zum PV-Ertrag und som
 
 Vorgehen:
 
-1. Optimale Heizungs-Einstellung für einen Betrieb ohne externe Einflussnahme
-- [Analyse Heizungsanlage](https://github.com/mktech-gh/SmartHome-and-IoT/blob/main/Doku/Analyse%20Projekt%20Mattes%20Viessmann.md)
+1. Analyse von Verhalten (Heizkurven, Ein-, Ausschalten usw.) und Einstellungen der Wärmepüumpen-Heizung für ein baselining.
+  - [Analyse Heizungsanlage](https://github.com/mktech-gh/SmartHome-and-IoT/blob/main/Doku/Analyse%20Projekt%20Mattes%20Viessmann.md)
+
+2. Datensammlung aller Werte (Temperaturen, Aktivierung/Deaktivierung von Verdichter und Umwälzpumpe usw.) in eine influxDB
 
 2. Konzept für eine Optimierung des Eigenstromverbrauchs
 

@@ -16,6 +16,7 @@ Heizkurve:
 - Der Pufferspeicher macht nur Sinn, wenn eine intelligente Kopplung mit der PV-Anlage besteht. Ohne Kopplung ist der Pufferspeicher (meine pers. Meinung) kontraproduktiv:
   - Der Pufferspeicher muss am Morgen zuerst aufgewärmt werden bis die gewünschte Puffer-Vorlaufttemperatrur erreicht wird und bis sich die Differenz zwischen Wärmepumpen-Rücklauf (aus dem Pufferspeicher) und dem Wärmepumpen-Vorlauf auf die betriebsdifferenz von 2 bis 4 Grad eingependelt ist.
   - Diese "Verlust"-Energie könnte eventuell am Abend zum Teil mit einer früheren Umstellung auf reduzierten Betrieb, kompensiert werden.
+  - Wirth meint, dass der Pufferspeicher verhindert, dass der Verdichter am Morgen zu viele Start/Stops hat. Ich bezweifle das dies notwendig ist, da ich annehme, dass der Verdichter dynamisch die Heitzkraft anpasst.
 - Ein intelligente Kopplung ist nur mit einer Viessmann-PV-Anlage möglich.
 - Reduzierter Nachtbetrieb;
   - Bei der Umschaltung von normalem auf reduziertem Betrieb wird der Verdichter manchmal abgeschaltet. Von Tag zu Tag unterschiedlich. 
@@ -44,10 +45,25 @@ __1. Optimierungen__
     - Durch den reduzierten Betrieb bleibt die Umwälzpumpe eingeschaltet und die Pufferenergie wird auf die Fussbodenheizung übertragen.
     - Durch die Senkung der Temperatur beim "reduzierten Betrieb" sollte keine Einschaltung des Verdichters vor der Umschaltung auf "Normal-Betrieb" erfolgen.
   - __Ergebnis:__
+    
+    -Der Verdichter-Vorlauf wird im reduzierten Betrieb auf Aussentemperatur abgekühlt. Dadurch wird auch das gesammte System vo Aussen abgekühlt 
 
-  b. Umschaltung von "Normal-Betrieb" auf "reduziererten-Betrieb auf 21:00 vorverlegen.
-    - Die Pufferenergie wird benutzt zum Heizen bis ca. Mitternacht
-    - __Ergebnis:__
+  b. 20230217vUmschaltung von "Normal-Betrieb" auf "reduziererten-Betrieb auf 21:00 vorverlegen.
+    - Duch die Umwälzpumpe des reduzierten Betriebs wird die Pufferenergie zum Heizen bis 24:00 benutzt . Verdichter schaltet daz nicht ein. Anschliessend bis 05:00 Standby-Betrieb. Der Puffer ist dann etwa auf Raumtemperatur und kühlt nicht weiter auf Aussentemperatur ab.
+    
+  - __Ergebnis:__
+  
+    - In den Temperaturaufzeichnungen kann festgestellt werden, dass um 05:00 der Verdichter wie gewünscht einschaltet und die Temperatur korrekt auf die geHK0_Zieltemperatur einstellt. Im Lauf des Mittags driftet die Vopraluftemperatur anch oben ab, bis der Verdichter abstellt. Diese Abdriften nach oben muss nun untersucht werden. Grundsätzlich ist die Temperatur in den Zimmern auf über 22,5 Grad. allso eher zu hoch.
+    
+  c. 20230221 
+  - Am Tag soll die Zieltemperatur 
+    - Reduktion des Heizkurven-Niveaus von 0 auf -2
+    - Erhöhung des reduzierten Betriebs von 16 auf 18 (Kompensation der Heizkurvenänderung im reduzierten Betrieb)
+    
+  - __Ergebnis:__
+  
+    - Ich kann feststellen, dass die, in der Tabelle der Heizkurve angezeigte Vorlauftemperatur (HK0_Zielvorlauftemperatur) bei einer eingestellten Raumtemperatur von ca 20grad stimmt. Bei tieferen (reduziertem Betrieb) oder höherem eingestellten Raumtemperaturen wird die HK0_Zielvorlauftemperatur ums das 1 bis 1,5-fache der Differenz angepasst.
+    
 
 2. Optimierung der Heizzeiten um die Pufferwärme für reduzierung des Einspeise-Energieverbrauchs zu nutzen
 3. Mit einer eigenen intelligenten Kopplung soll der Nutzen des Pufferspeichers genutzt werden. Analog Smard Grid - Steuerung gemäss Bedienungsanleitung Seite 50 und 101 

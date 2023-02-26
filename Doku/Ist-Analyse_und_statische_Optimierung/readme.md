@@ -61,8 +61,8 @@ __1. Optimierungen__
       - ![20230225 Viessmann 200-A 24h Heizen Warmwasser Standby  ](https://user-images.githubusercontent.com/102212594/221435098-3bc5c98e-79bc-4266-9a65-7d2ae610f6ca.png)
         - Im Reduzierten Berieb kann keine temperaturabhängige Aktion festgestellt werden. Die Umwälzpumpe ist in Betrieb und verteilt den Pufferinhalt. Es ist zu erwarten, dass bei ganz tiefen Temperaturen der Vedichte eingeschalten wird.
         - Im Standby Betreib sind Verdichter und Umwälzpumpe ausgeschalten. 
-      - Fällt die Aussentemperatur unter 3Grad, so wird der Frostschutz aktiv und die Umwälzpumpe wird mit einer HK0_Zieltemperatur von 15 Grad aktiviert
-      - ![20230226 Viessmann 200-A 24h Heizen Standby Frostschutz ](https://user-images.githubusercontent.com/102212594/221435357-e3aa56ed-d3d5-4e73-9961-06e1bcae5b95.png)
+        - Fällt die Aussentemperatur unter 3Grad, so wird der Frostschutz aktiv und die Umwälzpumpe wird mit einer HK0_Zieltemperatur von 15 Grad aktiviert
+        - ![20230226 Viessmann 200-A 24h Heizen Standby Frostschutz ](https://user-images.githubusercontent.com/102212594/221435357-e3aa56ed-d3d5-4e73-9961-06e1bcae5b95.png)
    
 
 2. Optimierung der Heizzeiten um die Pufferwärme für reduzierung des Einspeise-Energieverbrauchs zu nutzen

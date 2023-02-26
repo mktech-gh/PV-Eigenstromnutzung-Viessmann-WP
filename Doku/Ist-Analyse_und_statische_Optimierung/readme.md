@@ -2,7 +2,7 @@
 
 ## Ausgangslage
 
-Die Heizungsanlage wurde im Januar 2023 installiert und in Betrieb genommen. Der Wärmepumpen-Vorlauf wird oben in einen Pufferspeicher geleitet und verlässt diesen ebenfalls oben in die FBHeizung. Der Rücklauf aus der FBHeizung wird unten in den Pufferspeicher geleitet und fliesst ebenfalls unten in die Wärmepumpe.
+Die Heizungsanlage wurde im Januar 2023 installiert und in Betrieb genommen. Der Wärmepumpen-Vorlauf ist direkt mit dem Heizkreis und dem Pufferspeicher (oben) verbunden. Der Rücklauf aus der FBHeizung wird unten in den Pufferspeicher geleitet und fliesst ebenfalls unten in die Wärmepumpe. Der Pufferspeicher wirkt als eine [Hydraulische Weiche] (https://de.wikipedia.org/wiki/Hydraulische_Weiche).
 
 Die Wärmepumpe wird mit folgenden Parametern betrieben:
 - 00:00 bis 24:00 Reduzierter Betrieb mit Zieltemperatur 18Grad
@@ -38,32 +38,29 @@ Heizkurve:
 
 __1. Optimierungen__ 
 - Inspiration: Seite 14 der Bedienungsanleitung [Vitotronic 200Bedienungsanleitung.pdf](https://github.com/mktech-gh/SmartHome-and-IoT/files/10737513/Vitotronic.200Bedienungsanleitung.pdf)
-  a. 20230215 22:00: 
-  - "Reduzierter Betrieb" auf 16Grad (Default-Wert für Fussbodenheizung) sowie 
-  - unmittelbar nach "Normal-Betrieb" einschalten und vor "Normal-Betrieb" ausschalten. 
-  - "Normal-Betrieb" auf 20Grad (Default-Wert für Fussbodenheizung)
+  a. 20230221
+  - Reduktion des Heizkurven-Niveaus von 0 auf -2
+  - 00:00 "Standby" (Keine Betriebsart ausgelesen)
+  - 05:00 "Normal" - Betrieb auf 21C
+  - 21:00 "Reduziert" - Betrieb auf 17C
     - Durch den reduzierten Betrieb bleibt die Umwälzpumpe eingeschaltet und die Pufferenergie wird auf die Fussbodenheizung übertragen.
     - Durch die Senkung der Temperatur beim "reduzierten Betrieb" sollte keine Einschaltung des Verdichters vor der Umschaltung auf "Normal-Betrieb" erfolgen.
-  - __Ergebnis:__
-    
-    -Der Verdichter-Vorlauf wird im reduzierten Betrieb auf Aussentemperatur abgekühlt. Dadurch wird auch das gesammte System vo Aussen abgekühlt 
+    - Der Verdichter-Vorlauf wird im reduzierten Betrieb auf Aussentemperatur abgekühlt. Dadurch wird auch das gesamte System auf Aussenthemperatur abgekühlt. Mit dem Standby-Betrieb (Umwälzpumpe aus) soll ab 00:00 eine weitere Abkühlung des Puffers verhindert werden. Die Themperatur ist dann etwa uaf Raumtemperatur.
 
-  b. 20230217vUmschaltung von "Normal-Betrieb" auf "reduziererten-Betrieb auf 21:00 vorverlegen.
-    - Duch die Umwälzpumpe des reduzierten Betriebs wird die Pufferenergie zum Heizen bis 24:00 benutzt . Verdichter schaltet daz nicht ein. Anschliessend bis 05:00 Standby-Betrieb. Der Puffer ist dann etwa auf Raumtemperatur und kühlt nicht weiter auf Aussentemperatur ab.
-    
-  - __Ergebnis:__
+ - __Ergebnis:__
   
-    - In den Temperaturaufzeichnungen kann festgestellt werden, dass um 05:00 der Verdichter wie gewünscht einschaltet und die Temperatur korrekt auf die geHK0_Zieltemperatur einstellt. Im Lauf des Mittags driftet die Vopraluftemperatur anch oben ab, bis der Verdichter abstellt. Diese Abdriften nach oben muss nun untersucht werden. Grundsätzlich ist die Temperatur in den Zimmern auf über 22,5 Grad. allso eher zu hoch.
-    
-  c. 20230221 
-  - Am Tag soll die Zieltemperatur 
-    - Reduktion des Heizkurven-Niveaus von 0 auf -2
-    - Erhöhung des reduzierten Betriebs von 16 auf 18 (Kompensation der Heizkurvenänderung im reduzierten Betrieb)
-    
-  - __Ergebnis:__
-  
-    - Ich kann feststellen, dass die, in der Tabelle der Heizkurve angezeigte Vorlauftemperatur (HK0_Zielvorlauftemperatur) bei einer eingestellten Raumtemperatur von ca 20grad stimmt. Bei tieferen (reduziertem Betrieb) oder höherem eingestellten Raumtemperaturen wird die HK0_Zielvorlauftemperatur ums das 1 bis 1,5-fache der Differenz angepasst.
-    
+    - In den Temperaturaufzeichnungen kann festgestellt werden, dass um 05:00 der Verdichter wie gewünscht einschaltet und die Temperatur korrekt auf die HK0_Zieltemperatur einstellt. Je nach Aussentemperatur kann dann folgendes Verhalten festgestellt werden:
+      - Aussentemperatur ist so warm, dass die benötigte Heizenergie kleiner als die minimale Heizenergie der WP ist
+        - Die Vorlauftemperatur driftet nach oben ab. Wird ein bestimmtes Kriterium erreicht, stellt der Verdichter ab.
+        - ![20230224 Viessmann 200-A 24h Heizen mit Verdichterausschaltung Standby ](https://user-images.githubusercontent.com/102212594/221433771-465104e4-09b7-4b4b-aebf-3aa217598dd5.png)
+        - Die WP kann je nach Energiebedarf (Aussenthemperatur/Rücklauf usw) den Verdichter nochmals starten
+        - Spätestens mit der Umschaltung auf "Reduzierten"-Betrieb wird eine Einschaltung des Verdichters von der WP noch einmal in Erwägung gezogen. Auf jeden Fall läuft die Umwelzpumpe nach dem Ausschalten des Verdichters und der Umschaltung in den "reduzierten" Betrieb weiter.
+      - Wenn Aussentemperatur so kalt ist, dass mehr als die minimale Leistung der WP benötigt wird, wird die WP genau auf die gewünschte HK0_Zieltemperatur geregelt.
+      - ![20230225 Viessmann 200-A 24h Heizen Warmwasser Standby  ](https://user-images.githubusercontent.com/102212594/221435098-3bc5c98e-79bc-4266-9a65-7d2ae610f6ca.png)
+     - Im Reduzierten Berieb kann keine temperaturabhängige Aktion festgestellt werden. Die Umwälzpumpe ist in betreib und verteilt den Pufferinhalt. Es ist zu erwarten, dass bei ganz tiefen Temperaturen der Vedichte eingeschalten wird.
+     - Im Standby Betreib sind Verdichter und Umwälzpumpe ausgeschalten. Fällt die aussentemperatur unter 3Grad, so wird der Frostschutz aktiv und die Umwälzpumpe wird mit einer HK0_Zieltemperatur von 15 Grad aktiviert
+      - ![20230226 Viessmann 200-A 24h Heizen Standby Frostschutz ](https://user-images.githubusercontent.com/102212594/221435357-e3aa56ed-d3d5-4e73-9961-06e1bcae5b95.png)
+   
 
 2. Optimierung der Heizzeiten um die Pufferwärme für reduzierung des Einspeise-Energieverbrauchs zu nutzen
 3. Mit einer eigenen intelligenten Kopplung soll der Nutzen des Pufferspeichers genutzt werden. Analog Smard Grid - Steuerung gemäss Bedienungsanleitung Seite 50 und 101 

@@ -50,19 +50,26 @@ __1. Optimierungen__
 
  - __Ergebnis:__
   
-    - In den Temperaturaufzeichnungen kann festgestellt werden, dass um 05:00 der Verdichter wie gewünscht einschaltet und die Temperatur korrekt auf die HK0_Zieltemperatur einstellt. Je nach Aussentemperatur kann dann folgendes Verhalten festgestellt werden:
-      - Aussentemperatur ist so warm, dass die benötigte Heizenergie kleiner als die minimale Heizenergie der WP ist
-        - Die Vorlauftemperatur driftet nach oben ab. Wird ein bestimmtes Kriterium erreicht, stellt der Verdichter ab.
-        - ![20230224 Viessmann 200-A 24h Heizen mit Verdichterausschaltung Standby ](https://user-images.githubusercontent.com/102212594/221433771-465104e4-09b7-4b4b-aebf-3aa217598dd5.png)
-        - Die WP kann je nach Energiebedarf (Aussenthemperatur/Rücklauf usw) den Verdichter nochmals starten
-        - Spätestens mit der Umschaltung auf "Reduzierten"-Betrieb (21:00) wird eine Einschaltung des Verdichters von der WP noch einmal in Erwägung gezogen. Auf jeden Fall läuft die Umwelzpumpe nach dem Ausschalten des Verdichters und der Umschaltung iim "reduzierten" Betrieb weiter.
-      - Die Aussentemperatur so kalt ist, dass mehr als die minimale Leistung der WP benötigt wird:
-        - Die WP regelt genau auf die gewünschte HK0_Zieltemperatur.
-      - ![20230225 Viessmann 200-A 24h Heizen Warmwasser Standby  ](https://user-images.githubusercontent.com/102212594/221435098-3bc5c98e-79bc-4266-9a65-7d2ae610f6ca.png)
-        - Im Reduzierten Berieb kann keine temperaturabhängige Aktion festgestellt werden. Die Umwälzpumpe ist in Betrieb und verteilt den Pufferinhalt. Es ist zu erwarten, dass bei ganz tiefen Temperaturen der Vedichte eingeschalten wird.
-        - Im Standby Betreib sind Verdichter und Umwälzpumpe ausgeschalten. 
-        - Fällt die Aussentemperatur unter 3Grad, so wird der Frostschutz aktiv und die Umwälzpumpe wird mit einer HK0_Zieltemperatur von 15 Grad aktiviert
-        - ![20230226 Viessmann 200-A 24h Heizen Standby Frostschutz ](https://user-images.githubusercontent.com/102212594/221435357-e3aa56ed-d3d5-4e73-9961-06e1bcae5b95.png)
+    - Normal Betrieb
+      - In den Temperaturaufzeichnungen kann festgestellt werden, dass um 05:00 der Verdichter wie gewünscht einschaltet und die Temperatur korrekt auf die HK0_Zieltemperatur einstellt. Je nach Aussentemperatur kann dann folgendes Verhalten festgestellt werden:
+      
+        - Aussentemperatur ist so warm, dass die benötigte Heizenergie kleiner als die minimale Heizenergie der WP ist
+          - Die Vorlauftemperatur driftet nach oben ab. Wird ein bestimmtes Kriterium erreicht, stellt der Verdichter ab.
+          - ![20230224 Viessmann 200-A 24h Heizen mit Verdichterausschaltung Standby ](https://user-images.githubusercontent.com/102212594/221433771-465104e4-09b7-4b4b-aebf-3aa217598dd5.png)
+          - Die WP kann je nach Energiebedarf (Aussenthemperatur/Rücklauf usw) den Verdichter nochmals starten
+          - Spätestens mit der Umschaltung auf "Reduzierten"-Betrieb (21:00) wird eine Einschaltung des Verdichters von der WP noch einmal in Erwägung gezogen. Auf jeden Fall läuft die Umwelzpumpe nach dem Ausschalten des Verdichters und der Umschaltung iim "reduzierten" Betrieb weiter.
+      
+        - Die Aussentemperatur so kalt ist, dass mehr als die minimale Leistung der WP benötigt wird:
+          - Die WP regelt genau auf die gewünschte HK0_Zieltemperatur.
+          - ![20230225 Viessmann 200-A 24h Heizen Warmwasser Standby  ](https://user-images.githubusercontent.com/102212594/221435098-3bc5c98e-79bc-4266-9a65-7d2ae610f6ca.png)
+        
+    - Reduzierter Betrieb
+      - Im Reduzierten Berieb kann keine temperaturabhängige Aktion festgestellt werden. Die Umwälzpumpe ist in Betrieb und verteilt den Pufferinhalt. Es ist zu erwarten, dass bei ganz tiefen Temperaturen der Verdichter eingeschalten wird.
+      
+    - Standby Betrieb
+      - Im Standby Betreib sind Verdichter und Umwälzpumpe ausgeschalten. 
+      - Fällt die Aussentemperatur unter 3Grad, so wird der Frostschutz aktiv und die Umwälzpumpe wird mit einer HK0_Zieltemperatur von 15 Grad aktiviert
+      - ![20230226 Viessmann 200-A 24h Heizen Standby Frostschutz ](https://user-images.githubusercontent.com/102212594/221435357-e3aa56ed-d3d5-4e73-9961-06e1bcae5b95.png)
    
 
 2. Optimierung der Heizzeiten um die Pufferwärme für reduzierung des Einspeise-Energieverbrauchs zu nutzen

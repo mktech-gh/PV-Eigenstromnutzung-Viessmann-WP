@@ -56,7 +56,8 @@ __1. Optimierungen__
         - ![20230224 Viessmann 200-A 24h Heizen mit Verdichterausschaltung Standby ](https://user-images.githubusercontent.com/102212594/221433771-465104e4-09b7-4b4b-aebf-3aa217598dd5.png)
         - Die WP kann je nach Energiebedarf (Aussenthemperatur/Rücklauf usw) den Verdichter nochmals starten
         - Spätestens mit der Umschaltung auf "Reduzierten"-Betrieb (21:00) wird eine Einschaltung des Verdichters von der WP noch einmal in Erwägung gezogen. Auf jeden Fall läuft die Umwelzpumpe nach dem Ausschalten des Verdichters und der Umschaltung iim "reduzierten" Betrieb weiter.
-      - Wenn Aussentemperatur so kalt ist, dass mehr als die minimale Leistung der WP benötigt wird, wird die WP genau auf die gewünschte HK0_Zieltemperatur geregelt.
+      - Die Aussentemperatur so kalt ist, dass mehr als die minimale Leistung der WP benötigt wird:
+        - Die WP regelt genau auf die gewünschte HK0_Zieltemperatur.
       - ![20230225 Viessmann 200-A 24h Heizen Warmwasser Standby  ](https://user-images.githubusercontent.com/102212594/221435098-3bc5c98e-79bc-4266-9a65-7d2ae610f6ca.png)
         - Im Reduzierten Berieb kann keine temperaturabhängige Aktion festgestellt werden. Die Umwälzpumpe ist in Betrieb und verteilt den Pufferinhalt. Es ist zu erwarten, dass bei ganz tiefen Temperaturen der Vedichte eingeschalten wird.
         - Im Standby Betreib sind Verdichter und Umwälzpumpe ausgeschalten. 

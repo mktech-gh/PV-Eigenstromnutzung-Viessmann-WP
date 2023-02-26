@@ -16,19 +16,20 @@ Heizkurve:
 - Der Pufferspeicher macht nur Sinn, wenn eine intelligente Kopplung mit der PV-Anlage besteht. Ohne Kopplung ist der Pufferspeicher (meine pers. Meinung) kontraproduktiv:
   - Der Pufferspeicher muss am Morgen zuerst aufgewärmt werden bis die gewünschte Puffer-Vorlaufttemperatrur erreicht wird und bis sich die Differenz zwischen Wärmepumpen-Rücklauf (aus dem Pufferspeicher) und dem Wärmepumpen-Vorlauf auf die betriebsdifferenz von 2 bis 4 Grad eingependelt ist.
   - Diese "Verlust"-Energie könnte eventuell am Abend zum Teil mit einer früheren Umstellung auf reduzierten Betrieb, kompensiert werden.
-  - Wirth meint, dass der Pufferspeicher verhindert, dass der Verdichter am Morgen zu viele Start/Stops hat. Ich bezweifle das dies notwendig ist, da ich annehme, dass der Verdichter dynamisch die Heitzkraft anpasst.
-- Ein intelligente Kopplung ist nur mit einer Viessmann-PV-Anlage möglich.
+  - Wirth meint, dass der Pufferspeicher verhindert, dass der Verdichter am Morgen zu viele Start/Stops hat. Ich bezweifle das eine so grosse Dimensionierung notwendig ist. Eine normale hydraulische Weiche in Rohr-Ausführung hätte gereicht. Ev. wird der Pufferspeicher im Kühlbetrieb einen Vorteil bringen.
+  - Ein intelligente Kopplung ist nur mit einer Viessmann-PV-Anlage möglich.
 - Reduzierter Nachtbetrieb;
   - Bei der Umschaltung von normalem auf reduziertem Betrieb wird der Verdichter manchmal abgeschaltet. Von Tag zu Tag unterschiedlich. 
   - Wenn der verdichter nicht abgeschaltet wird, kann eine um ca. 3 Grad reduzierte Vorlauftemperatur festgestellt werden. 
   - Wird der Verdichter bei Umschaltung auf reduzierten Betrieb abgeschalten, dann fällt die Vorlauftemperatur langsam innerhalb von 6h auf 23Grad.
-  - Nach diesem Abfall schaltet der Verdichter noch vor der Umschaltung auf Normalbetrieb wieder ein. Annahme: Die Vorlauftemperatur (noch aus den Reserven des Pufferspeichers) sinkt unter einen bestimmten Vorlaufwert.
-  - Temperaturen wenn Verdichter abgeschaltet wird (14.Feb.23 00:00/03:00Uhr): 
-    - Speicher-Top: 27.6/24.4
-    - Heizungssystem-Rücklauf: 27.5/24.3
-    - Wärmepumpen-Vorlauf: 26.7/23.6
-    - Da der Rücklauf höher als der Vorlauf ist, kann festgehalten werden: 
-      - Der Vorlauf wird gemischt mit dem Speicher in das Heizungsystem eingespiesen. Die Speicherwärme wird somit durch den Betrieb mit der Umwälzpumpe genutzt.
+  - Die folgende Fesstellung basiert eventuell auf der ungünstigen Wahl der Betriebs-Modi/Zeiten:
+    - Nach diesem Abfall schaltet der Verdichter noch vor der Umschaltung auf Normalbetrieb wieder ein. Annahme: Die Vorlauftemperatur (noch aus den Reserven des Pufferspeichers) sinkt unter einen bestimmten Vorlaufwert.
+    - Temperaturen wenn Verdichter abgeschaltet wird (14.Feb.23 00:00/03:00Uhr): 
+      - Speicher-Top: 27.6/24.4
+      - Heizungssystem-Rücklauf: 27.5/24.3
+      - Wärmepumpen-Vorlauf: 26.7/23.6
+      - Da der Rücklauf höher als der Vorlauf ist, kann festgehalten werden: 
+        - Der Vorlauf wird gemischt mit dem Speicher in das Heizungsystem eingespiesen. Die Speicherwärme wird somit durch den Betrieb mit der Umwälzpumpe genutzt.
 
 ### Informationen
 - Viessmann Funktion Pufferspeicher: https://www.viessmann.ch/de/wissen/technik-und-systeme/heizwasser-pufferspeicher.html

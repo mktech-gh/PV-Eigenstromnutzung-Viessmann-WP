@@ -10,6 +10,8 @@ Die Wärmepumpe wird mit folgenden Parametern betrieben:
 Heizkurve:
   - Niveau 0 (Bedutet bei Zieltemperatur 21Grad und Aussentemperatur von 0Grad eine Vorlauftemperatur von 33Grad)
   - Neigung 0.4
+- Temperaturdifferenz für Berechnung der Heizgrenze 7003: 4K (entspricht einer Temperatur von 21 + 4 = 17K)
+- Temperaturdifferenz für Berechnung der Kühlgrenze 7004: 4K (entspricht einer Temperatur von 21 + 4 = 25K)
 
 ### Feststellungen
 
@@ -47,6 +49,8 @@ __1. Optimierungen__
     - Durch den reduzierten Betrieb bleibt die Umwälzpumpe eingeschaltet und die Pufferenergie wird auf die Fussbodenheizung übertragen.
     - Durch die Senkung der Temperatur beim "reduzierten Betrieb" sollte keine Einschaltung des Verdichters vor der Umschaltung auf "Normal-Betrieb" erfolgen.
     - Der Verdichter-Vorlauf wird im reduzierten Betrieb auf Aussentemperatur abgekühlt. Dadurch wird auch das gesamte System auf Aussenthemperatur abgekühlt. Mit dem Standby-Betrieb (Umwälzpumpe aus) soll ab 00:00 eine weitere Abkühlung des Puffers verhindert werden. Die Themperatur ist dann etwa uaf Raumtemperatur.
+  - Temperaturdifferenz für Berechnung der Heizgrenze 7003: 4K (entspricht einer Temperatur von 21 + 4 = 17K)
+  - Temperaturdifferenz für Berechnung der Kühlgrenze 7004: 4K (entspricht einer Temperatur von 21 + 4 = 25K) 
 
  - __Ergebnis:__
   

@@ -12,6 +12,7 @@ Heizkurve:
   - Neigung 0.4
 - Temperaturdifferenz für Berechnung der Heizgrenze 7003: 4K (entspricht einer Temperatur von 21 + 4 = 17K)
 - Temperaturdifferenz für Berechnung der Kühlgrenze 7004: 4K (entspricht einer Temperatur von 21 + 4 = 25K)
+  - Aufgrund der fixen Hysterese von 2K ergibt sich: Heizung ein bei <=17, Heizung aus >= 19K
 
 ### Feststellungen
 
@@ -51,6 +52,7 @@ __1. Optimierungen__
     - Der Verdichter-Vorlauf wird im reduzierten Betrieb auf Aussentemperatur abgekühlt. Dadurch wird auch das gesamte System auf Aussenthemperatur abgekühlt. Mit dem Standby-Betrieb (Umwälzpumpe aus) soll ab 00:00 eine weitere Abkühlung des Puffers verhindert werden. Die Themperatur ist dann etwa uaf Raumtemperatur.
   - Temperaturdifferenz für Berechnung der Heizgrenze 7003: 4K (entspricht einer Temperatur von 21 + 4 = 17K)
   - Temperaturdifferenz für Berechnung der Kühlgrenze 7004: 4K (entspricht einer Temperatur von 21 + 4 = 25K) 
+    - Aufgrund der fixen Hysterese von 2K ergibt sich: Heizung ein bei <=17, Heizung aus >= 19K
 
  - __Ergebnis:__
   
